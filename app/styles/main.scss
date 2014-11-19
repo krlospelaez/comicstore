@@ -1,0 +1,154 @@
+$icon-font-path: "/bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+
+@import 'bootstrap-sass-official/assets/stylesheets/bootstrap.scss';
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* Space out content a bit */
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #919191;
+}
+
+.main {
+	background-color: white;
+	border-radius: 4px 4px 0 0 !important;
+}
+
+.navbar {
+	border: 0;
+	border-radius: 4px 0 0 0;
+}
+
+.list-group {
+	list-style: none;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Custom page header */
+.header {
+    background-color: #FFFFFF;
+	margin: 0px -15px;
+	border-radius: 4px 4px 0 0 !important;
+}
+
+/* Make the masthead heading the same height as the navigation */
+.header h1 {
+    margin-top: 10px;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+	margin-top: 0px;
+	padding: 30px 20px;
+	background: -webkit-linear-gradient(top, #98141b 0%,#b61821 100%);
+	color: white;
+	text-shadow: 2px 2px 10px #000;
+}
+
+/* Custom page footer */
+.footer {
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+    margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+    margin: 15px 0;
+}
+
+.marketing p + h4 {
+    margin-top: 28px;
+}
+
+#popular-sidebar h4 {
+	margin-top: 0px;
+}
+
+#comic-menu, #comic-menu > ul {
+	margin-bottom: 0px;
+}
+
+.main {
+	max-width: 880px;
+}
+
+#top-menu a {
+	color: #000;
+}
+
+.active-red > a, .active-red > a:hover {
+	color: #fff !important;
+	background-color: #98141b !important;
+}
+
+.nav-pills > li > a {
+	border-radius: 4px 4px 0 0;
+}
+
+.navbar-default {
+	background-color: #f3f3f3;
+}
+
+body {
+	/*background: url(https://www-images.comixology.com/images/marvel/main_bg.jpg);*/
+}
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+	#top-menu > li:last-child span:first-child {
+		display: none;
+	}
+	
+	.navbar-nav {
+		margin: 0;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.navbar-nav {
+		margin: 0;
+	}
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 1224px) {
+	
+	.main {
+        max-width: 1170px;
+    }
+	
+    /* Remove the bottom border on the jumbotron for visual effect */
+    .jumbotron {
+        border-bottom: 0;
+    }
+}
