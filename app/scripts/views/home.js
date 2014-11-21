@@ -1,4 +1,5 @@
 /*global define*/
+var ag;
 define([
     'jquery',
     'underscore',
@@ -23,7 +24,7 @@ define([
         	'click .available-menu': 'availableMenu'
         },
         
-        el: '.general-view',
+        //el: '.general-view',
         
         template: Handlebars.compile(sourceTpl),
         genreTemplate: Handlebars.compile(genreTpl),
@@ -45,7 +46,6 @@ define([
 					if(!_.isEmpty(filter)) {
 						me.model.models = items.where(filter);
 					}
-					me.renderComicList();
 				}
 			});
         },
@@ -54,23 +54,20 @@ define([
         	var me = this;
         	me.filter = options.filter;
         	me.model.comparator = 'order';
-            me.listenTo(me.model, 'sync', function() {
-            	console.log("FIRE!!");
-            });
+        	
+        	me.genreModel = new GenreCollection();
+        	
+            me.listenTo(me.model, 'sync', me.renderComicList);
+            me.listenTo(me.genreModel, 'sync', me.renderMenu);
             me.render();
+            
+            me.genreModel.fetch();
             me.fetchModel();
         },
 
         render: function () {
         	var me = this;
         	this.$el.html(this.template);
-			
-        	me.genreModel = new GenreCollection();
-            me.genreModel.fetch({
-            	success: function() {
-            		me.renderMenu();
-            	}
-            });
             
             return this;
         },
@@ -85,6 +82,7 @@ define([
         },
         
         availableMenu: function(event) {
+        	ag = event;
         	var me = this;
         	switch($(event.currentTarget).data().value) {
         		case "all":
@@ -99,6 +97,10 @@ define([
         		default:
         			break;
         	}
+        	
+        	var ul = $(event.target).closest('ul');
+        	ul.find('.active').removeClass('active');
+        	$(event.currentTarget).addClass('active');
         }
     });
 

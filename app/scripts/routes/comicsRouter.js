@@ -42,12 +42,7 @@ define(function (require) {
         	
         	var allComics = new ComicCollection();
         	
-        	if(app.view.current != null) {
-        		app.view.current.close();
-        	}
-        	
-        	app.view.current = new HomeView({model: allComics});
-        	//home.render();
+        	this.render(new HomeView({model: allComics}));
         },
         
         genre: function(genreId) {
@@ -55,16 +50,23 @@ define(function (require) {
         	var ComicCollection = require('collections/comic');
         	
         	var allComics = new ComicCollection();
-        	
+			
+        	this.render(new HomeView({
+					model: allComics,
+					filter: {
+						genre: genreId
+					}
+    			})
+    		);
+        },
+        
+        render: function(view) {
         	if(app.view.current != null) {
         		app.view.current.close();
         	}
-        	app.view.current = new HomeView({
-				model: allComics,
-				filter: {
-					genre: genreId
-				}
-    		});
+        	
+        	app.view.current = view;
+        	$('.general-view').html(app.view.current.$el);
         }
 
     });

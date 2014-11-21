@@ -58,7 +58,12 @@ require([
 	Backbone.View.prototype.close = function() {
 		this.remove();
 		this.unbind();
-		this.model.unbind("change", this.modelChanged);
+		if(this.model) {
+			this.model.unbind();
+		}
+		if(this.onClose) {
+			this.onClose();
+		}
 	};
 	
     Backbone.history.start();
