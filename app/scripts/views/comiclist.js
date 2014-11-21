@@ -6,7 +6,6 @@ define([
     'backbone',
     'handlebars',
     'text!templates/comiclist.hbs'
-    //'templates'
 ], function ($, _, Backbone, Handlebars, sourceTpl) {
     'use strict';
 
@@ -19,16 +18,15 @@ define([
         className: '',
 
         events: {},
+        
+        template: Handlebars.compile(sourceTpl),
 
         initialize: function () {
-            //this.listenTo(this.model, 'change', this.render);
+            
         },
 
         render: function () {
-            //this.$el.html(this.template(this.model.toJSON()));
-            //var source = require('text!templates/comiclist.hbs');
-        	var template = Handlebars.compile(sourceTpl);
-        	this.$el.html(template);
+        	this.$el.html(this.template({comics: this.model.toJSON()}));
         	
             return this;
         }

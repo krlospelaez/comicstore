@@ -32,14 +32,17 @@ define(function (require) {
 
     var ComicsRouterRouter = Backbone.Router.extend({
         routes: {
-        	'': 'home'
+        	'': 'comic',
+        	'/genre/:name': 'comic'
         },
         
-        home: function() {
+        comic: function(name) {
         	var HomeView = require('views/home');
+        	var ComicCollection = require('collections/comic');
         	
-        	var home = new HomeView();
-        	home.render();
+        	var allComics = new ComicCollection();
+        	var home = new HomeView({model: allComics});
+        	//home.render();
         }
 
     });

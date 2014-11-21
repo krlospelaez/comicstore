@@ -29,6 +29,24 @@ require(['bootstrap'], function(bootstrap) {
 	$('.dropdown-toggle').dropdown();
 });
 
+/// Handlebars Helpers
+require(['handlebars'], function(Handlebars) {
+	Handlebars.registerHelper('ifmodeqzero', function(first, second, options) {
+		first++;
+		var ret = (first % second == 0);
+		
+		return ret ? options.fn(this) : options.inverse(this);
+	});
+	
+	Handlebars.registerHelper('disabled', function(item, options) {
+		return (item) ? 'disabled': '';
+	});
+	
+	Handlebars.registerHelper('not', function(item, options) {		
+		return !item;
+	});
+});
+
 /// App Init
 require([
     'backbone',

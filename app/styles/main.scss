@@ -118,6 +118,12 @@ body {
 	background-color: #f3f3f3;
 }
 
+.thumbnail h6 {
+	height: 2.375em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
 body {
 	/*background: url(https://www-images.comixology.com/images/marvel/main_bg.jpg);*/
 }
