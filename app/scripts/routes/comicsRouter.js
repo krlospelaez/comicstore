@@ -33,16 +33,38 @@ define(function (require) {
     var ComicsRouterRouter = Backbone.Router.extend({
         routes: {
         	'': 'comic',
-        	'/genre/:name': 'comic'
+        	'!/genre/:id': 'genre'
         },
         
-        comic: function(name) {
+        comic: function() {
         	var HomeView = require('views/home');
         	var ComicCollection = require('collections/comic');
         	
         	var allComics = new ComicCollection();
-        	var home = new HomeView({model: allComics});
+        	
+        	if(app.view.current != null) {
+        		app.view.current.close();
+        	}
+        	
+        	app.view.current = new HomeView({model: allComics});
         	//home.render();
+        },
+        
+        genre: function(genreId) {
+        	var HomeView = require('views/home');
+        	var ComicCollection = require('collections/comic');
+        	
+        	var allComics = new ComicCollection();
+        	
+        	if(app.view.current != null) {
+        		app.view.current.close();
+        	}
+        	app.view.current = new HomeView({
+				model: allComics,
+				filter: {
+					genre: genreId
+				}
+    		});
         }
 
     });

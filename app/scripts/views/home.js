@@ -27,27 +27,45 @@ define([
         
         template: Handlebars.compile(sourceTpl),
         genreTemplate: Handlebars.compile(genreTpl),
-
-        initialize: function () {
+        
+        fetchModel: function(filters) {
         	var me = this;
-        	me.model.comparator = 'order';
-            me.listenTo(me.model, 'change', me.render);
-            me.model.fetch({
+        	var filter = {};
+        	if(!_.isEmpty(me.filter)) {
+        		filter = _.clone(me.filter);
+        	}
+        	
+        	if(!_.isEmpty(filters)) {
+        		filter = _.extend(filter, filters)
+        	}
+        	
+        	me.model.fetch({
+        		reset: true,
 				success: function(items) {
-					//me.model.models = items.where({name: 'Pollito pio'});
-					me.render();
+					if(!_.isEmpty(filter)) {
+						me.model.models = items.where(filter);
+					}
+					me.renderComicList();
 				}
 			});
+        },
+
+        initialize: function (options) {
+        	var me = this;
+        	me.filter = options.filter;
+        	me.model.comparator = 'order';
+            me.listenTo(me.model, 'sync', function() {
+            	console.log("FIRE!!");
+            });
+            me.render();
+            me.fetchModel();
         },
 
         render: function () {
         	var me = this;
         	this.$el.html(this.template);
-            
-            var comicListView = new ComicListView({model: this.model});
-            $('#home-view').html(comicListView.render().el);
-            
-            me.genreModel = new GenreCollection();
+			
+        	me.genreModel = new GenreCollection();
             me.genreModel.fetch({
             	success: function() {
             		me.renderMenu();
@@ -55,6 +73,11 @@ define([
             });
             
             return this;
+        },
+        
+        renderComicList: function() {
+        	var comicListView = new ComicListView({model: this.model});
+            $('#home-view').html(comicListView.render().el);
         },
         
         renderMenu: function() {
@@ -65,30 +88,13 @@ define([
         	var me = this;
         	switch($(event.currentTarget).data().value) {
         		case "all":
-        			me.model.fetch({
-        				reset: true,
-        				success: function(items) {
-        					me.render();
-        				}
-        			});
+        			me.fetchModel();
         			break;
         		case "available":
-        			me.model.fetch({
-        				reset: true,
-						success: function(items) {
-							me.model.models = items.where({available: true});
-							me.render();
-						}
-					});
+        			me.fetchModel({available: true});
         			break;
         		case "borrowed":
-        			me.model.fetch({
-        				reset: true,
-						success: function(items) {
-							me.model.models = items.where({available: false});
-							me.render();
-						}
-					});
+        			me.fetchModel({available: false});
         			break;
         		default:
         			break;

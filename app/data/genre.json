@@ -1,21 +1,21 @@
 [{
-	"id": 1,
+	"id": "science-fiction",
 	"name": "Science Fiction",
 	"url": "/genre/science-fiction"
 },{
-	"id": 2,
+	"id": "police",
 	"name": "Police",
 	"url": "/genre/police"
 },{
-	"id": 3,
+	"id": "thriller",
 	"name": "Thriller",
 	"url": "/genre/thriller"
 },{
-	"id": 4,
+	"id": "adventure",
 	"name": "Adventure",
 	"url": "/genre/adventure"
 },{
-	"id": 5,
+	"id": "comedy",
 	"name": "Comedy",
 	"url": "/genre/comedy"
 }]

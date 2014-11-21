@@ -53,5 +53,13 @@ require([
     'router'
 ], function (Backbone, Router) {
 	app.router = new Router();
+	app.view = app.view || { current: null };
+	
+	Backbone.View.prototype.close = function() {
+		this.remove();
+		this.unbind();
+		this.model.unbind("change", this.modelChanged);
+	};
+	
     Backbone.history.start();
 });
