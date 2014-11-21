@@ -36,8 +36,6 @@ define(function (require) {
         },
         
         home: function() {
-        	console.log("Inicio");
-        	
         	var HomeView = require('views/home');
         	
         	var home = new HomeView();

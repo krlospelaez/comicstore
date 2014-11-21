@@ -1,16 +1,20 @@
 /*global define*/
 
-define([
+/*define([
     'jquery',
     'underscore',
     'backbone',
     'templates'
-], function ($, _, Backbone, JST) {
+], function ($, _, Backbone, JST) {*/
+
+define(function(require) {
     'use strict';
-
+	
+	var Backbone = require('backbone');
+	var JST = require('templates');
+	var Handlebars = require('handlebars');
+	
     var HomeView = Backbone.View.extend({
-        template: JST['app/scripts/templates/home.ejs'],
-
         tagName: 'div',
 
         id: '',
@@ -26,9 +30,13 @@ define([
         },
 
         render: function () {
-        	//this.$el.html(this.template(this.model.toJSON()));
-            this.$el.html(this.template());
-            console.log(this.$el);
+        	var source = require('text!templates/home.hbs');
+        	var template = Handlebars.compile(source);
+        	this.$el.html(template);
+            
+            var ComicListView = require('views/comiclist');
+            var comicListView = new ComicListView();
+            $('#home-view').html(comicListView.render().el);
             return this;
         }
     });

@@ -8,6 +8,9 @@ require.config({
         bootstrap: {
             deps: ['jquery'],
             exports: 'jquery'
+        },
+        handlebars: {
+        	exports: 'Handlebars'
         }
     },
     paths: {
@@ -15,6 +18,8 @@ require.config({
         backbone: '../bower_components/backbone/backbone',
         underscore: '../bower_components/lodash/dist/lodash',
         bootstrap: '../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap',
+        handlebars: '../bower_components/handlebars/handlebars',
+        text: '../bower_components/requirejs-text/text',
         router: 'routes/comicsRouter'
     }
 });
