@@ -17,6 +17,7 @@ require.config({
         jquery: '../bower_components/jquery/dist/jquery',
         backbone: '../bower_components/backbone/backbone',
         underscore: '../bower_components/lodash/dist/lodash',
+        localstorage: "../bower_components/backbone.localStorage/backbone.localStorage",
         bootstrap: '../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap',
         handlebars: '../bower_components/handlebars/handlebars',
         text: '../bower_components/requirejs-text/text',
