@@ -1,15 +1,12 @@
+<div class="well well-title"><h4><strong>Characters</strong></h4></div>
 <div class="row">
-	{{#each comics}}
+	{{#each characters}}
 		<articule class="col-xs-6 col-md-3">
 			
 			<div class="thumbnail">
 				<img src="{{url}}" alt="comic image">
 				<div class="caption">
 					<h6>{{name}}</h6>
-					<p>
-						<a href="#" class="btn btn-primary btn-sm {{disabled (not available)}}" role="button">Rent</a>
-						<a href="#" class="btn btn-default btn-sm" role="button">Details</a>
-					</p>
 				</div>
 			</div>
 		</articule>

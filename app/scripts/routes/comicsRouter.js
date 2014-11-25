@@ -39,36 +39,54 @@ define(function (require) {
         	'genre/:id': 'genre',
         	'login': 'login',
         	'logout': 'logout',
-        	'register': 'register'
+        	'register': 'register',
+        	'characters': 'characters'
         },
         
         comic: function() {
         	var HomeView = require('views/home');
+        	var ComicListView = require('views/comiclist');
         	var ComicCollection = require('collections/comic');
         	
         	var allComics = new ComicCollection();
         	
-        	this.render(new HomeView({model: allComics}));
+        	var home = new HomeView();
+        	this.render(home);
+        	home.renderSubView(new ComicListView({model: allComics, title: 'Comics'}));
         },
         
         genre: function(genreId) {
         	var HomeView = require('views/home');
+        	var ComicListView = require('views/comiclist');
         	var ComicCollection = require('collections/comic');
         	
         	var allComics = new ComicCollection();
 			
-        	this.render(new HomeView({
-					model: allComics,
-					filter: {
-						genre: genreId
-					}
-    			})
-    		);
+			var home = new HomeView();
+			this.render(home);
+        	//app.view.current instanceof HomeView
+        	var comicList = new ComicListView({
+        		title: 'Genre: ' + genreId,
+				model: allComics,
+				filter: {
+					genre: genreId
+				}
+    		});
+    		
+    		home.renderSubView(comicList);
         },
         
         characters: function(characterId) {
         	var HomeView = require('views/home');
         	var CharactersView = require('views/characters');
+        	var CharacterCollection = require('collections/character');
+        	
+        	var characters = new CharacterCollection();
+        	
+        	var home = new HomeView();
+        	this.render(home);
+        	
+        	home.renderSubView(new CharactersView({model: characters}));
         },
         
         login: function() {

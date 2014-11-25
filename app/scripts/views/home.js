@@ -1,5 +1,4 @@
 /*global define*/
-var ag;
 define([
     'jquery',
     'underscore',
@@ -33,39 +32,16 @@ define([
         template: Handlebars.compile(sourceTpl),
         genreTemplate: Handlebars.compile(genreTpl),
         popularTemplate: Handlebars.compile(popularTpl),
-        
-        fetchModel: function(filters) {
-        	var me = this;
-        	var filter = {};
-        	if(!_.isEmpty(me.filter)) {
-        		filter = _.clone(me.filter);
-        	}
-        	
-        	if(!_.isEmpty(filters)) {
-        		filter = _.extend(filter, filters)
-        	}
-        	
-        	me.model.fetch({
-        		reset: true,
-				success: function(items) {
-					if(!_.isEmpty(filter)) {
-						me.model.models = items.where(filter);
-					}
-				}
-			});
-        },
 
         initialize: function (options) {
         	var me = this;
-        	me.filter = options.filter;
-        	me.model.comparator = 'order';
         	
         	me.genreModel = new GenreCollection();
         	me.qualificationModel = new PopularCollection({ url: 'qualification' });
         	me.topSearchModel = new PopularCollection({ url: 'topsearch' });
         	me.recommendedModel = new PopularCollection({ url: 'recommended' });
         	
-            me.listenTo(me.model, 'sync', me.renderComicList);
+            
             me.listenTo(me.genreModel, 'sync', me.renderGenreMenu);
             me.listenTo(me.qualificationModel, 'sync', me.renderQualification);
             me.listenTo(me.topSearchModel, 'sync', me.renderTopSearch);
@@ -77,7 +53,6 @@ define([
             me.qualificationModel.fetch();
             me.topSearchModel.fetch();
             me.recommendedModel.fetch();
-            me.fetchModel();
         },
 
         render: function () {
@@ -87,9 +62,16 @@ define([
             return this;
         },
         
-        renderComicList: function() {
-        	var comicListView = new ComicListView({model: this.model});
-            $('#home-view').html(comicListView.render().el);
+        renderSubView: function(view) {
+        	if(view.availableMenu) {
+        		$('#available-menu').removeClass('hide');
+        	}
+        	else {
+        		$('#available-menu').addClass('hide');
+        	}
+        	
+        	$('#home-view').html(view.render().el);
+        	this.currentSubView = view;
         },
         
         renderGenreMenu: function() {
@@ -109,25 +91,9 @@ define([
         },
         
         availableMenu: function(event) {
-        	ag = event;
-        	var me = this;
-        	switch($(event.currentTarget).data().value) {
-        		case "all":
-        			me.fetchModel();
-        			break;
-        		case "available":
-        			me.fetchModel({available: true});
-        			break;
-        		case "borrowed":
-        			me.fetchModel({available: false});
-        			break;
-        		default:
-        			break;
+        	if(this.currentSubView.availableMenu) {
+        		this.currentSubView.availableMenu(event);
         	}
-        	
-        	var ul = $(event.target).closest('ul');
-        	ul.find('.active').removeClass('active');
-        	$(event.currentTarget).addClass('active');
         }
     });
 

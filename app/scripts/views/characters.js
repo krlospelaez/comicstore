@@ -22,13 +22,19 @@ define([
         template: Handlebars.compile(sourceTpl),
 
         initialize: function () {
+            var me = this;
             
+            me.listenTo(me.model, 'sync', me.renderData);
+            me.model.fetch();
         },
 
         render: function () {
-        	this.$el.html(this.template({characters: this.model.toJSON()}));
-        	
             return this;
+        },
+        
+        renderData: function() {
+        	this.$el.html(this.template({characters: this.model.toJSON()}));
+        	//this.$el.html('hola');
         }
     });
 

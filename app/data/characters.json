@@ -8,49 +8,42 @@
 	"id": "hulk",
 	"name": "Hulk",
 	"url": "http://i.annihil.us/u/prod/marvel/i/mg/5/a0/538615ca33ab0/standard_xlarge.jpg",
-	"available": true,
 	"genre":"science-fiction",
 	"order": 40
 },{
 	"id": "iron-man",
 	"name": "Iron Man",
 	"url": "http://x.annihil.us/u/prod/marvel/i/mg/2/50/537bb1c400135/standard_xlarge.jpg",
-	"available": true,
 	"genre":"science-fiction",
 	"order": 30
 },{
 	"id": "spider-man",
 	"name": "Spider-Man",
 	"url": "http://i.annihil.us/u/prod/marvel/i/mg/9/30/538cd33e15ab7/standard_xlarge.jpg",
-	"available": true,
 	"genre":"superheroes",
 	"order": 50
 },{
 	"id": "avengers",
 	"name": "Avengers",
 	"url": "http://x.annihil.us/u/prod/marvel/i/mg/3/a0/537ba3793915b/standard_xlarge.jpg",
-	"available": false,
 	"genre":"adventure",
 	"order": 1
 },{
 	"id": "thor",
 	"name": "Thor",
 	"url": "http://x.annihil.us/u/prod/marvel/i/mg/5/a0/537bc7036ab02/standard_xlarge.jpg",
-	"available": true,
 	"genre":"adventure",
 	"order": 15
 },{
 	"id": "x-men",
 	"name": "X-Men",
 	"url": "http://x.annihil.us/u/prod/marvel/i/mg/8/03/510c08f345938/standard_xlarge.jpg",
-	"available": true,
 	"genre":"superheroes",
 	"order": 55
 },{
 	"id": "guardians-of-the-galaxy",
 	"name": "Guardians of the Galaxy",
 	"url": "http://x.annihil.us/u/prod/marvel/i/mg/c/10/537babe1c1f66/standard_xlarge.jpg",
-	"available": true,
 	"genre":"adventure",
 	"order": 35
 }]
