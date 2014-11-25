@@ -46,6 +46,10 @@ require(['handlebars'], function(Handlebars) {
 	Handlebars.registerHelper('not', function(item, options) {		
 		return !item;
 	});
+	
+	Handlebars.registerHelper('inc', function(index, options) {		
+		return index + 1;
+	});
 });
 
 /// App Init

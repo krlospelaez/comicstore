@@ -8,8 +8,12 @@ define([
     'text!templates/home.hbs',
     'views/comiclist',
     'text!templates/genre.hbs',
-    'collections/genre'
-], function ($, _, Backbone, Handlebars, sourceTpl, ComicListView, genreTpl, GenreCollection) {
+    'collections/genre',
+    'text!templates/popular.hbs',
+    'collections/popular'
+], function ($, _, Backbone, Handlebars, sourceTpl,
+			 ComicListView, genreTpl, GenreCollection,
+			 popularTpl, PopularCollection) {
 
     'use strict';
 	
@@ -28,6 +32,7 @@ define([
         
         template: Handlebars.compile(sourceTpl),
         genreTemplate: Handlebars.compile(genreTpl),
+        popularTemplate: Handlebars.compile(popularTpl),
         
         fetchModel: function(filters) {
         	var me = this;
@@ -56,12 +61,22 @@ define([
         	me.model.comparator = 'order';
         	
         	me.genreModel = new GenreCollection();
+        	me.qualificationModel = new PopularCollection({ url: 'qualification' });
+        	me.topSearchModel = new PopularCollection({ url: 'topsearch' });
+        	me.recommendedModel = new PopularCollection({ url: 'recommended' });
         	
             me.listenTo(me.model, 'sync', me.renderComicList);
-            me.listenTo(me.genreModel, 'sync', me.renderMenu);
+            me.listenTo(me.genreModel, 'sync', me.renderGenreMenu);
+            me.listenTo(me.qualificationModel, 'sync', me.renderQualification);
+            me.listenTo(me.topSearchModel, 'sync', me.renderTopSearch);
+            me.listenTo(me.recommendedModel, 'sync', me.renderRecommended);
+            
             me.render();
             
             me.genreModel.fetch();
+            me.qualificationModel.fetch();
+            me.topSearchModel.fetch();
+            me.recommendedModel.fetch();
             me.fetchModel();
         },
 
@@ -77,8 +92,20 @@ define([
             $('#home-view').html(comicListView.render().el);
         },
         
-        renderMenu: function() {
+        renderGenreMenu: function() {
         	$('#genre-menu').append(this.genreTemplate({genre: this.genreModel.toJSON()}));
+        },
+        
+        renderQualification: function() {
+        	$('#qualification-menu').html(this.popularTemplate({popular: this.qualificationModel.toJSON()}));
+        },
+        
+        renderTopSearch: function() {
+        	$('#top-search-menu').html(this.popularTemplate({popular: this.topSearchModel.toJSON()}));
+        },
+        
+        renderRecommended: function() {
+        	$('#recommended-menu').html(this.popularTemplate({popular: this.recommendedModel.toJSON()}));
         },
         
         availableMenu: function(event) {

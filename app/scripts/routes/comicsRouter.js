@@ -32,17 +32,17 @@ define(function (require) {
 
     var ComicsRouterRouter = Backbone.Router.extend({
     	routePrefix: '!/',
-    	loginUrl: 'login',
+    	noRequiresAuth: ['login', 'register'],
         routes: {
         	'': 'comic',
         	'comic': 'comic',
         	'genre/:id': 'genre',
         	'login': 'login',
-        	'logout': 'logout'
+        	'logout': 'logout',
+        	'register': 'register'
         },
         
         comic: function() {
-        	console.log("HOLA");
         	var HomeView = require('views/home');
         	var ComicCollection = require('collections/comic');
         	
@@ -66,6 +66,11 @@ define(function (require) {
     		);
         },
         
+        characters: function(characterId) {
+        	var HomeView = require('views/home');
+        	var CharactersView = require('views/characters');
+        },
+        
         login: function() {
         	var LoginView = require('views/login');
         	
@@ -73,68 +78,83 @@ define(function (require) {
         },
         
         logout: function() {
-        	var me = this;
-        	var meArgs = arguments;
+        	var Session = require('models/session');
         	
-        	var SessionCollection = require('collections/session');
-        	var session = new SessionCollection();
-        	
-        	session.fetch().then(function(response) {
-        		var user = session.at(0);
-        		if(user) {
-        			//session.remove(user);
-        			user.destroy();
-        		}
-        		//ComicsRouterRouter.__super__.navigate(me.routePrefix + me.loginUrl, {trigger: true});
-        	});
+        	Session.clear();
+        	Backbone.history.navigate(this.routePrefix + 'login', { trigger : true });
         },
         
-        execute: function() {
-        	console.log('EXECUTE');
-        	console.dir(arguments);
-        	ComicsRouterRouter.__super__.execute.apply(this, arguments);
+        register: function() {
+        	var RegisterView = require('views/register');
+        	this.render(new RegisterView());
         },
         
-        trigger: function() {
-        	console.log("TRIGGER");
-        	var me = this;
-        	var meArgs = arguments;
-        	
-        	if(meArgs[0] === 'route:' + me.loginUrl) {
-        		$('#login-menu').addClass('hide');
-        		ComicsRouterRouter.__super__.trigger.apply(me, meArgs);
-        		return;
-        	}
-        	
-        	var SessionCollection = require('collections/session');
-        	var session = new SessionCollection();
-        	
-        	session.fetch().then(function(response) {
-        		var user = session.at(0);
-        		if(!user) {
-        			$('#login-menu').addClass('hide');
-        			ComicsRouterRouter.__super__.navigate(me.routePrefix + me.loginUrl, {trigger: true});
-        			return;
-        		}
-        		else {
-        			$('#login-menu').removeClass('hide');
-        			ComicsRouterRouter.__super__.trigger.apply(me, meArgs);
-        			$('#login-fullname').text(user.get('fullName'));
-        		}
-        		
-        	});
-        },
-        
-        route: function(route, name, callback) {
+        route : function(route, name, callback){
         	var me = this;
         	var meArgs = arguments;
         	
         	if(meArgs[0] !== '') {
         		meArgs[0] = me.routePrefix + meArgs[0];
+        		route = me.routePrefix + route;
         	}
         	
-        	ComicsRouterRouter.__super__.route.apply(me, meArgs);
-        },
+			if (!_.isRegExp(route)) route = this._routeToRegExp(route);
+			if (_.isFunction(name)) {
+				callback = name;
+				name = '';
+			}
+			if (!callback) callback = this[name];
+
+			var router = this;
+
+			Backbone.history.route(route, function(fragment) {
+				var args = router._extractParameters(route, fragment);
+
+				var next = function(){
+					callback && callback.apply(router, args);
+					router.trigger.apply(router, ['route:' + name].concat(args));
+					router.trigger('route', name, args);
+					Backbone.history.trigger('route', router, name, args);
+					//router.after.apply(router, args);        
+				}
+				router.before.apply(router, [args, next]);
+			});
+			return this;
+      	},
+      	
+      	before: function(params, next) {
+			//Checking if user is authenticated or not
+			//then check the path if the path requires authentication
+			var Session = require('models/session');
+			
+			var isAuth = Session.get('authenticated');
+			var user = Session.get('user');
+			var path = Backbone.history.location.hash;
+			var needAuth = !_.contains(this.noRequiresAuth, path.replace('#' + this.routePrefix, ''));
+			var cancelAccess = _.contains(this.noRequiresAuth, path.replace('#' + this.routePrefix, ''));
+			
+			if(needAuth && !isAuth) {
+				//If user gets redirect to login because wanted to access
+				// to a route that requires login, save the path in session
+				// to redirect the user back to path after successful login
+				Session.set('redirectFrom', path);
+				Backbone.history.navigate(this.routePrefix + 'login', { trigger : true });
+			}
+			else if(isAuth && cancelAccess) {
+				//User is authenticated and tries to go to login, register ...
+				// so redirect the user to home page
+				Backbone.history.navigate('', { trigger : true });
+			}
+			else {
+				//No problem, handle the route!!
+				if(_.isEmpty($('#login-menu'))) {
+					var LoginMenuView = require('views/loginMenu');
+					new LoginMenuView();	
+				}
+				
+				return next();
+			}
+      	},
         
         render: function(view) {
         	if(app.view.current != null) {

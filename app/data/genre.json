@@ -3,9 +3,9 @@
 	"name": "Science Fiction",
 	"url": "/genre/science-fiction"
 },{
-	"id": "police",
-	"name": "Police",
-	"url": "/genre/police"
+	"id": "superheroes",
+	"name": "Super Heroes",
+	"url": "/genre/superheroes"
 },{
 	"id": "thriller",
 	"name": "Thriller",

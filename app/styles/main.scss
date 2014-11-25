@@ -124,6 +124,12 @@ body {
 	text-overflow: ellipsis;
 }
 
+.cut {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
 body {
 	/*background: url(https://www-images.comixology.com/images/marvel/main_bg.jpg);*/
 }

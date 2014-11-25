@@ -1,0 +1,36 @@
+[{
+	"id": 1,
+	"name": "All-New Captain America (2014-) #1",
+	"url": "https://annihilusssl.sslcs.cdngc.net/c/DIG030905_3.jpg?h=786695942966cc2ce583546b76710ee7&width=174",
+	"available": false,
+	"genre":"science-fiction",
+	"order": 10
+},{
+	"id": 6,
+	"name": "Axis: Carnage #2",
+	"url": "https://annihilusssl.sslcs.cdngc.net/c/DIG031285_3.jpg?h=71537df2fa1ad8aa08a29cc851cd46cd&width=174",
+	"available": true,
+	"genre":"adventure",
+	"order": 15
+},{
+	"id": 8,
+	"name": "Spider-Man Noir #3",
+	"url": "https://annihilusssl.sslcs.cdngc.net/c/DEC082352_1.jpg?h=62d20589ced81be3cb003c91a7cbe4bf&width=174",
+	"available": true,
+	"genre":"adventure",
+	"order": 35
+},{
+	"id": 7,
+	"name": "Spider-Woman: Origin #1",
+	"url": "https://annihilusssl.sslcs.cdngc.net/c/DIG008893_1.jpg?h=44438e171d6e497c500b2208be880b51&width=174",
+	"available": true,
+	"genre":"adventure",
+	"order": 55
+},{
+	"id": 4,
+	"name": "Secret War",
+	"url": "https://annihilusssl.sslcs.cdngc.net/c/JUL090629.jpg?h=eddf65bcdedb4e8eaf495aa5b5294d1e&width=174",
+	"available": true,
+	"genre":"adventure",
+	"order": 50
+}]
