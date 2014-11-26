@@ -1,0 +1,42 @@
+{
+	"id": "hulk",
+	"name": "Hulk",
+	"image": "http://x.annihil.us/u/prod/marvel/i/mg/e/e0/537bafa34baa9.jpg",
+	"description": "Caught in a gamma bomb explosion while trying to save the life of a teenager, Dr. Bruce Banner was transformed into the incredibly powerful creature called the Hulk. An all too often misunderstood hero, the angrier the Hulk gets, the stronger the Hulk gets.",
+	"realName": "Robert Bruce Banner",
+	"powers": "The Hulk possesses an incredible level of superhuman physical ability. His capacity for physical strength is potentially limitless due to the fact that the Hulk's strength increases proportionally with his level of great emotional stress, anger in particular.",
+	"movies": [{
+		"name": "Avengers: Age of Ultron",
+		"releaseDate": "May 1, 2015",
+		"image": "http://i.annihil.us/u/prod/marvel/i/mg/9/d0/544a90d6c4ff8/portrait_incredible.jpg"
+	},{
+		"name": "Marvel's The Avengers",
+		"releaseDate": "May 4, 2012",
+		"image": "http://x.annihil.us/u/prod/marvel/i/mg/6/50/521f70b81f7d3/portrait_incredible.jpg"
+	},{
+		"name": "The Incredible Hulk",
+		"releaseDate": "Jun 13, 2008",
+		"image": "http://x.annihil.us/u/prod/marvel/i/mg/e/f0/521f75adeadc2/portrait_incredible.jpg"
+	},{
+		"name": "Hulk",
+		"releaseDate": "Jun 20, 2003",
+		"image": "http://i.annihil.us/u/prod/marvel/i/mg/3/50/52012fe32699b/portrait_incredible.jpg"
+	}],
+	"games": [{
+		"name": "Marvel: Avengers Alliance Tactics",
+		"releaseDate": "Jun 2, 2014",
+		"image": "http://x.annihil.us/u/prod/marvel/i/mg/c/c0/5390fd5bad86f/portrait_marvelous.jpg"
+	},{
+		"name": "Marvel Puzzle Quest",
+		"releaseDate": "Oct 3, 2013",
+		"image": "http://x.annihil.us/u/prod/marvel/i/mg/c/c0/5390fd5bad86f/portrait_marvelous.jpg"
+	},{
+		"name": "LEGO Marvel Super Heroes",
+		"releaseDate": "Oct 22, 2013",
+		"image": "http://i.annihil.us/u/prod/marvel/i/mg/5/70/523a2544b61ab/portrait_marvelous.jpg"
+	},{
+		"name": "Marvel: Avengers Alliance",
+		"releaseDate": "Mar 1, 2012",
+		"image": "http://x.annihil.us/u/prod/marvel/i/mg/3/d0/52274739ee4b5/portrait_marvelous.jpg"
+	}]
+}

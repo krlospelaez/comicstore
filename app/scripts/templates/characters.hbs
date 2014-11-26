@@ -2,12 +2,13 @@
 <div class="row">
 	{{#each characters}}
 		<articule class="col-xs-6 col-md-3">
-			
 			<div class="thumbnail">
+				<a href="#!/character/detail/{{id}}">
 				<img src="{{url}}" alt="comic image">
 				<div class="caption">
 					<h5>{{name}}</h5>
 				</div>
+				</a>
 			</div>
 		</articule>
 		{{#unless @last}}

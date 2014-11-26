@@ -41,7 +41,9 @@ define(function (require) {
         	'login': 'login',
         	'logout': 'logout',
         	'register': 'register',
-        	'characters': 'characters'
+        	'characters': 'characters',
+        	'character/detail/:id': 'characterDetail',
+        	'profile': 'profile'
         },
         
         initialize: function() {
@@ -100,6 +102,24 @@ define(function (require) {
         	this.render(home);
         	
         	home.renderSubView(new CharactersView({model: characters}));
+        },
+        
+        characterDetail: function(characterId) {
+        	var CharacterDetailView = require('views/characterdetail');
+        	var CharacterDetailModel = require('models/characterdetail');
+        	
+        	var model = new CharacterDetailModel({ characterId: characterId });
+        	this.render(new CharacterDetailView({model: model}));
+        },
+        
+        profile: function() {
+        	var ProfileView = require('views/profile');
+        	var UserModel = require('models/user');
+        	var Session = require('models/session');
+        	var UserData = Session.get('user');
+        	
+        	var model = new UserModel(UserData);
+        	this.render(new ProfileView({model: model}));
         },
         
         login: function() {

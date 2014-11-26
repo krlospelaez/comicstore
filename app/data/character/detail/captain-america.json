@@ -1,0 +1,50 @@
+{
+	"id": "captain-america",
+	"name": "Captain America",
+	"image": "http://x.annihil.us/u/prod/marvel/i/mg/9/80/537ba5b368b7d.jpg",
+	"description": "Vowing to serve his country any way he could, young Steve Rogers took the super soldier serum to become America's one-man army. Fighting for the red, white and blue for over 60 years, Captain America is the living, breathing symbol of freedom and liberty.",
+	"realName": "Steven \"Steve\" Rogers",
+	"powers": "Captain America represented the pinnacle of human physical perfection. He experienced a time when he was augmented to superhuman levels, but generally performed just below superhuman levels for most of his career.",
+	"movies": [{
+		"name": "Avengers: Age of Ultron",
+		"releaseDate": "May 1, 2015",
+		"image": "http://i.annihil.us/u/prod/marvel/i/mg/9/d0/544a90d6c4ff8/portrait_incredible.jpg"
+	},{
+		"name": "Captain America: The Winter Soldier",
+		"releaseDate": "Apr 4, 2014",
+		"image": "http://x.annihil.us/u/prod/marvel/i/mg/9/50/5342fbd2c94c5/portrait_incredible.jpg"
+	},{
+		"name": "Marvel's The Avengers",
+		"releaseDate": "May 4, 2012",
+		"image": "http://x.annihil.us/u/prod/marvel/i/mg/6/50/521f70b81f7d3/portrait_incredible.jpg"
+	},{
+		"name": "Captain America: The First Avenger",
+		"releaseDate": "Jul 22, 2011",
+		"image": "http://x.annihil.us/u/prod/marvel/i/mg/c/30/521f6f84ecba1/portrait_incredible.jpg"
+	},{
+		"name": "Thor",
+		"releaseDate": "May 6, 2011",
+		"image": "http://x.annihil.us/u/prod/marvel/i/mg/3/a0/521f71d0689e3/portrait_incredible.jpg"
+	}],
+	"games": [{
+		"name": "Marvel: Avengers Alliance Tactics",
+		"releaseDate": "Jun 2, 2014",
+		"image": "http://x.annihil.us/u/prod/marvel/i/mg/c/c0/5390fd5bad86f/portrait_marvelous.jpg"
+	},{
+		"name": "Marvel Puzzle Quest",
+		"releaseDate": "Oct 3, 2013",
+		"image": "http://x.annihil.us/u/prod/marvel/i/mg/c/c0/5390fd5bad86f/portrait_marvelous.jpg"
+	},{
+		"name": "LEGO Marvel Super Heroes",
+		"releaseDate": "Oct 22, 2013",
+		"image": "http://i.annihil.us/u/prod/marvel/i/mg/5/70/523a2544b61ab/portrait_marvelous.jpg"
+	},{
+		"name": "Marvel: Avengers Alliance",
+		"releaseDate": "Mar 1, 2012",
+		"image": "http://x.annihil.us/u/prod/marvel/i/mg/3/d0/52274739ee4b5/portrait_marvelous.jpg"
+	},{
+		"name": "Marvel War of Heroes",
+		"releaseDate": "Oct 18, 2012",
+		"image": "http://x.annihil.us/u/prod/marvel/i/mg/3/50/5239c06931db5/portrait_marvelous.jpg"
+	}]
+}

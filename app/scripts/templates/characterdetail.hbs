@@ -1,0 +1,77 @@
+<div class="row marketing">
+	<div class="col-lg-9">
+		<figure class="character-image-detail">
+			<img src="{{image}}" alt="Image Comic" />
+		</figure>
+		<articule>
+			<div class="character-articule">
+				<h3>{{name}}</h3>
+				<p>{{description}}</p>
+				<div class="">
+					<h4>Character Info</h4>
+					<div class="">
+						<h5>Real Name</h5>
+						<span>{{realName}}</span>
+					</div>
+					<div class="">
+						<h5>Powers</h5>
+						<span>{{powers}}</span>
+					</div>
+				</div>
+				<div class="character-menu">
+				    <div id="" class="nav">
+				    	<ul id="tabs" class="nav nav-tabs navbar-default" data-tabs="tabs">
+				    		<li href="#movies" class="active" data-toggle="tab"><a>Movies</a></li>
+				    		<li href="#games" class="" data-toggle="tab"><a>Games</a></li>
+				    		<li class=""><a>Borrowed</a></li>
+				    	</ul>
+				    	<div id="my-tab-content" class="tab-content">
+				    		<div class="tab-pane active marketing" id="movies">
+				    			<div class="row">
+				    			{{#each movies}}
+									<articule class="character-thumbnail col-xs-6 col-md-3">
+										<div class="thumbnail">
+											<img src="{{image}}" alt="comic image">
+											<div class="caption">
+												<h6>{{name}}</h6>
+												<p>{{releaseDate}}</p>
+											</div>
+										</div>
+									</articule>
+									{{#unless @last}}
+										{{#ifmodeqzero @index 4}}
+								</div>
+								<div class="row">
+										{{/ifmodeqzero}}
+									{{/unless}}
+								{{/each}}
+								</div>
+							</div>
+							<div class="tab-pane marketing" id="games">
+								<div class="row">
+				    			{{#each games}}
+									<articule class="character-thumbnail col-xs-6 col-md-3">
+										<div class="thumbnail">
+											<img src="{{image}}" alt="comic image">
+											<div class="caption">
+												<h6>{{name}}</h6>
+												<p>{{releaseDate}}</p>
+											</div>
+										</div>
+									</articule>
+									{{#unless @last}}
+										{{#ifmodeqzero @index 4}}
+								</div>
+								<div class="row">
+										{{/ifmodeqzero}}
+									{{/unless}}
+								{{/each}}
+								</div>
+							</div>
+				    	</div>
+				    </div>
+				</div>
+			</div>
+		</articule>
+	</div>
+</div>

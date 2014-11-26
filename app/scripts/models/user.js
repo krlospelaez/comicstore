@@ -16,7 +16,10 @@ define([
         	sessionId: '',
         	userName: '',
         	password: '',
-        	fullName: ''
+        	fullName: '',
+        	email: '',
+        	userSince: '',
+        	picture: 'https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-256.png'
         },
 
         validate: function(attrs, options) {

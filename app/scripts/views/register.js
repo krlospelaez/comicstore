@@ -55,7 +55,7 @@ define([
         	var pass = $('#password').val();
         	var repeatPass = $('#repeatpassword').val();
         	
-        	if(name && user && pass && repeatPass) {
+        	if(name && user && email && pass && repeatPass) {
         		if(pass.length < 7) {
         			var tpl = "<div class=\"popover\">\
         					   <div class=\"arrow\"></div>\
@@ -92,7 +92,9 @@ define([
             	var user = new UserModel({
             		userName: user,
             		password: pass,
-            		fullName: name
+            		fullName: name,
+            		email: email,
+            		userSince: new Date().toISOString().slice(0, 10)
             	});
             	
             	userCollection.add(user);
