@@ -11,7 +11,10 @@ require.config({
         },
         handlebars: {
         	exports: 'Handlebars'
-        }
+        },
+        alphanum: {
+        	exports: 'jquery'
+        },
     },
     paths: {
         jquery: '../bower_components/jquery/dist/jquery',
@@ -21,8 +24,14 @@ require.config({
         bootstrap: '../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap',
         handlebars: '../bower_components/handlebars/handlebars',
         text: '../bower_components/requirejs-text/text',
+        alphanum: '../bower_components/jquery-alphanum/jquery.alphanum',
         router: 'routes/comicsRouter'
     }
+});
+
+// Jquery Init
+require(['jquery', 'alphanum'], function() {
+	
 });
 
 /// Bootstrap Init

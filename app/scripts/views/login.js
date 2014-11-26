@@ -35,23 +35,16 @@ define([
 
         initialize: function () {
         	$('#login-menu').remove();
-            //this.listenTo(this.model, 'change', this.render);
             this.userCollection = new UserCollection();
             this.userCollection.fetch();
-            //console.dir(userCollection.localStorage.find({userName: 'pollo'}));
-            /*var user = new UserModel({
-            	userName: 'pollo',
-            	password: '123'
-            });
-            userCollection.add(user);
-            user.save();
-            userCollection.fetch();
-            console.dir(userCollection);*/
+            
             this.render();
         },
 
         render: function () {
         	this.$el.html(this.template);
+            
+            $('#login-username').alphanum();
             
             return this;
         },

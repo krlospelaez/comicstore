@@ -7,15 +7,7 @@
 	"name": "Super Heroes",
 	"url": "/genre/superheroes"
 },{
-	"id": "thriller",
-	"name": "Thriller",
-	"url": "/genre/thriller"
-},{
 	"id": "adventure",
 	"name": "Adventure",
 	"url": "/genre/adventure"
-},{
-	"id": "comedy",
-	"name": "Comedy",
-	"url": "/genre/comedy"
 }]

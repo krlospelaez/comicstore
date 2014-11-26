@@ -36,11 +36,16 @@ define(function (require) {
         routes: {
         	'': 'comic',
         	'comic': 'comic',
+        	'comic/detail/:id' : 'comicDetail',
         	'genre/:id': 'genre',
         	'login': 'login',
         	'logout': 'logout',
         	'register': 'register',
         	'characters': 'characters'
+        },
+        
+        initialize: function() {
+        
         },
         
         comic: function() {
@@ -53,6 +58,14 @@ define(function (require) {
         	var home = new HomeView();
         	this.render(home);
         	home.renderSubView(new ComicListView({model: allComics, title: 'Comics'}));
+        },
+        
+        comicDetail: function(comicId) {
+        	var ComicDetailView = require('views/comicdetail');
+        	var ComicDetailModel = require('models/comicdetail');
+        	
+        	var model = new ComicDetailModel({ comicId: comicId });
+        	this.render(new ComicDetailView({model: model}));
         },
         
         genre: function(genreId) {

@@ -23,10 +23,15 @@ define([
         className: '',
 
         events: {
-        	'click #btn-register': 'register'
+        	'click #btn-register': 'register',
+        	'keydown #password': 'hidePopover'
         },
         
         userCollection: null,
+        
+        hidePopover: function() {
+        	$('#password').popover("hide");
+        },
 
         initialize: function () {
         	$('#login-menu').remove();
@@ -37,6 +42,8 @@ define([
 
         render: function () {
         	this.$el.html(this.template);
+        	
+        	$('#username').alphanum();
             
             return this;
         },
@@ -49,6 +56,28 @@ define([
         	var repeatPass = $('#repeatpassword').val();
         	
         	if(name && user && pass && repeatPass) {
+        		if(pass.length < 7) {
+        			var tpl = "<div class=\"popover\">\
+        					   <div class=\"arrow\"></div>\
+        					   <div class=\"popover-inner\">\
+        					   <div class=\"popover-content\">\
+        					   <p></p></div></div></div>";
+        	
+		        	var _popover = $('#password').popover({
+						trigger: "manual",
+						placement: "right",
+						content: "The password must be at least 7 characters.",
+						template: tpl
+					});
+        			$('#password').data('bs.popover').options.content = "The password must be at least 7 characters.";
+					$('#password').popover("show");
+					
+					$('.alert-success').addClass('hide');
+		            $('.alert-fields').removeClass('hide');
+		            $('.alert-email').addClass('hide');
+					return;
+        		}
+        		
         		if(pass !== repeatPass) {
         			$('.alert-email').removeClass('hide');
         			$('.alert-fields').addClass('hide');
@@ -77,7 +106,7 @@ define([
 	            
 	            setTimeout(function() {
 	            	Backbone.history.navigate('#!/login', { trigger : true });
-	            }, 3000);
+	            }, 2000);
         	}
         	else {
         		$('.alert-success').addClass('hide');

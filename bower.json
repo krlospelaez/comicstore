@@ -10,7 +10,8 @@
     "requirejs-text": "~2.0.10",
     "modernizr": "~2.7.1",
     "handlebars": "~2.0.0",
-    "backbone.localStorage": "~1.1.14"
+    "backbone.localStorage": "~1.1.14",
+    "jquery-alphanum": "~1.0.17"
   },
   "devDependencies": {}
 }
