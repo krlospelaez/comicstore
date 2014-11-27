@@ -38,6 +38,31 @@ body {
     padding-right: 0;
 }
 
+.footer {
+	margin: 0px -15px -10px -15px;
+	background-color: #000;
+	height: 70px;
+}
+
+.footer .footer-menu {
+	margin: -5px 0px 5px 4em;
+}
+
+.footer .footer-menu li {
+	padding: 10px;
+	background-color: #98141b;
+	border-radius: 4px;
+}
+
+.footer .footer-menu li a {
+	color: #fff;
+	text-shadow: 1px 1px 5px #000;
+}
+
+.footer-social {
+	margin: -8px 5em;
+}
+
 /* Custom page header */
 .header {
     background-color: #FFFFFF;
@@ -141,11 +166,11 @@ body {
 }
 
 .comic-image-detail {
-	margin: 1em 40px;
+	margin: 1em 4em;
 }
 
 .character-image-detail {
-	margin: 1em 40px;
+	margin: 1em 4em;
 }
 
 .character-image-detail img {
@@ -153,15 +178,15 @@ body {
 }
 
 .character-articule {
-	margin-left: 40px;
+	margin-left: 4em;
 }
 
 .character-menu {
-	margin-top: 40px;
+	margin-top: 4em;
 }
 
 .comics-borrowed {
-	margin-left: 40px;
+	margin-left: 4em;
 }
 
 .comic-item {
@@ -170,6 +195,14 @@ body {
 	padding: 5px 15px;
 	border: 1px solid #ddd;
 	border-radius: 4px;
+}
+
+.profile-picture {
+	border: 3px solid #ccc;
+	border-radius: 130px;
+	padding: 5px;
+	height: 200px;
+	margin: 40px 80px;
 }
 
 body {

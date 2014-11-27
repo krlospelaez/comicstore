@@ -6,20 +6,15 @@ define([
 ], function (_, Backbone) {
     'use strict';
 
-    var ComicModel = Backbone.Model.extend({
+    var LoanModel = Backbone.Model.extend({
         url: '',
 
         initialize: function() {
         },
 
         defaults: {
-        	id: '',
-        	name: '',
-        	synopsis: '',
-        	url: '',
-        	available: '',
-        	genre: '',
-        	order: ''
+        	userId: '',
+        	comicId: ''
         },
 
         validate: function(attrs, options) {
@@ -30,5 +25,5 @@ define([
         }
     });
 
-    return ComicModel;
+    return LoanModel;
 });

@@ -1,0 +1,46 @@
+{
+	"id": "iron-man",
+	"name": "Iron Man",
+	"image": "http://i.annihil.us/u/prod/marvel/i/mg/9/90/537bb1e907de6.jpg",
+	"description": "Wounded, captured and forced to build a weapon by his enemies, billionaire industrialist Tony Stark instead created an advanced suit of armor to save his life and escape captivity. Now with a new outlook on life, Tony uses his money and intelligence to make the world a safer, better place as Iron Man.",
+	"realName": "Anthony Edward \"Tony\" Stark",
+	"powers": "None; Tony's body had been enhanced by the modified techno-organic virus, Extremis, but it is currently inaccessible and inoperable.",
+	"movies": [{
+		"name": "Avengers: Age of Ultron",
+		"releaseDate": "May 1, 2015",
+		"image": "http://i.annihil.us/u/prod/marvel/i/mg/9/d0/544a90d6c4ff8/portrait_incredible.jpg"
+	},{
+		"name": "Iron Man 3",
+		"releaseDate": "May 3, 2013",
+		"image": "http://x.annihil.us/u/prod/marvel/i/mg/c/a0/521f70fab9fd8/portrait_incredible.jpg"
+	},{
+		"name": "Marvel's The Avengers",
+		"releaseDate": "May 4, 2012",
+		"image": "http://x.annihil.us/u/prod/marvel/i/mg/6/50/521f70b81f7d3/portrait_incredible.jpg"
+	},{
+		"name": "Iron Man 2",
+		"releaseDate": "May 7, 2010",
+		"image": "http://x.annihil.us/u/prod/marvel/i/mg/8/60/521f703f2ab1a/portrait_incredible.jpg"
+	},{
+		"name": "Iron Man",
+		"releaseDate": "May 2, 2008",
+		"image": "http://x.annihil.us/u/prod/marvel/i/mg/f/10/521f6ebeb4bb6/portrait_incredible.jpg"
+	}],
+	"games": [{
+		"name": "Marvel: Avengers Alliance Tactics",
+		"releaseDate": "Jun 2, 2014",
+		"image": "http://x.annihil.us/u/prod/marvel/i/mg/c/c0/5390fd5bad86f/portrait_marvelous.jpg"
+	},{
+		"name": "Marvel Puzzle Quest",
+		"releaseDate": "Oct 3, 2013",
+		"image": "http://x.annihil.us/u/prod/marvel/i/mg/c/c0/5390fd5bad86f/portrait_marvelous.jpg"
+	},{
+		"name": "LEGO Marvel Super Heroes",
+		"releaseDate": "Oct 22, 2013",
+		"image": "http://i.annihil.us/u/prod/marvel/i/mg/5/70/523a2544b61ab/portrait_marvelous.jpg"
+	},{
+		"name": "Marvel: Avengers Alliance",
+		"releaseDate": "Mar 1, 2012",
+		"image": "http://x.annihil.us/u/prod/marvel/i/mg/3/d0/52274739ee4b5/portrait_marvelous.jpg"
+	}]
+}

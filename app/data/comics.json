@@ -1,6 +1,7 @@
 [{
 	"id": 1,
 	"name": "All-New Captain America (2014-) #1",
+	"synopsis": "This is it! The all-new, Spy-Fi, highflying adventures of Sam Wilson Captain America and Nomad begin here! Hydra is growing, the terrorist band have has infiltrated the Marvel Universe completely! But what is their ultimate goal?",
 	"url": "https://annihilusssl.sslcs.cdngc.net/c/DIG030905_3.jpg?h=786695942966cc2ce583546b76710ee7&width=174",
 	"available": false,
 	"genre":"superheroes",
@@ -8,6 +9,7 @@
 },{
 	"id": 2,
 	"name": "Hulk (2008-2012) #4",
+	"synopsis": "Red Light, Green Light\nThis is it. The one you've been SMASHING for. The Green Hulk RETURNS! It's Green Hulk Vs. Red Hulk --but the real loser is the Planet Earth. There have been knock-down-dragger-outters in the Marvel Universe -- but nothing like this! Plus, who gave the Watcher such good seats??? If you read ONE comic book this month, it's gotta be HULK -- or SUFFER THE CONSEQUENCES!",
 	"url": "https://annihilusssl.sslcs.cdngc.net/c/FEB082223.jpg?h=75711ce138a65fd6d9995f861d56d5ec&width=174",
 	"available": true,
 	"genre":"superheroes",
@@ -15,6 +17,7 @@
 },{
 	"id": 3,
 	"name": "Miles Morales: Ultimate Spider-Man (2014-) #7",
+	"synopsis": "WHO IS KATIE BISHOP? MILES MORALES has a girlfriend. Her name is KATIE BISHOP. Katie has a secret. It's bad news for SPIDER-MAN",
 	"url": "https://annihilusssl.sslcs.cdngc.net/c/DIG031018_2.jpg?h=a447f7767c5dde3be3a47c89eef484f0&width=174",
 	"available": true,
 	"genre":"superheroes",
@@ -22,6 +25,7 @@
 },{
 	"id": 4,
 	"name": "Avengers (1963-1996) #362",
+	"synopsis": "The alternate dimension Vision is able to seriously injure the Swordsman, which leads the Avengers to vow to take the fight to the Gatherers.",
 	"url": "https://annihilusssl.sslcs.cdngc.net/c/DIG030891_1.jpg?h=3ed91cfa0d64822e3c608248f43df38a&width=174",
 	"available": true,
 	"genre":"adventure",
@@ -29,6 +33,7 @@
 },{
 	"id": 5,
 	"name": "Superior Iron Man (2014-) #1",
+	"synopsis": "How much would you pay for perfection, beauty...immortality? TONY STARK is going to find out. The AXIS EFFECT has changed IRON MAN Now HE'S going to change the WORLD...at a terrible cost.",
 	"url": "https://annihilusssl.sslcs.cdngc.net/c/DIG030910_3.jpg?h=2ecb61d6ecd0e40ab816b9550438ea35&width=174",
 	"available": true,
 	"genre":"science-fiction",
@@ -36,6 +41,7 @@
 },{
 	"id": 6,
 	"name": "Thor (2007-2011) #11",
+	"synopsis": "The Odinson is all about second chances. So when Thor resurrects his mischievous sibling Loki, he allows her the freedom to do as she pleases. But there's only one thing the Trickster has in mind: take down her Asgardian bretheren!",
 	"url": "https://annihilusssl.sslcs.cdngc.net/c/JUL082345.jpg?h=b76ee448f867839ae18dc0f404458b2e&width=174",
 	"available": false,
 	"genre":"adventure",
@@ -43,6 +49,7 @@
 },{
 	"id": 7,
 	"name": "X-Men (1991-2001) #20",
+	"synopsis": "Jean questions Psylocke about her relationship with Cyclops. This leads to a brawl between the two X-Men and finally, the reveal that Psylocke is an imposter...",
 	"url": "https://annihilusssl.sslcs.cdngc.net/c/DIG031372_1.jpg?h=c70ebaa329c69a9fc4e9aab371656e64&width=174",
 	"available": true,
 	"genre":"adventure",
@@ -50,6 +57,7 @@
 },{
 	"id": 8,
 	"name": "Guardians of the Galaxy Vol. 3: Guardians Disassembled",
+	"synopsis": "With the entire galaxy gunning for the Guardians and Star-Lord missing, its time to bring in a little help. But as the Guardians of the Galaxy get ready for new members Venom and Captain Marvel, unexpected dangers arise that promise to tear the team to its core! Where in the universe is Star-Lord? What does his disappearance mean for Earth's safety? And can he survive on the run from a mysterious new adversary without the aid of the Guardians? Plus: The Guardians of the Galaxy investigate the mystery of a S.H.I.E.L.D. Helicarrier that suddenly appears in outer space!",
 	"url": "https://annihilusssl.sslcs.cdngc.net/c/DIG031058_1.jpg?h=fd6f363df235cf19ba4b89bfaf0479bb&width=174",
 	"available": true,
 	"genre":"science-fiction",
@@ -57,6 +65,7 @@
 },{
 	"id": 9,
 	"name": "Miles Morales: Ultimate Spider-Man (2014-) #4",
+	"synopsis": "The Spider-Man story everyone is talking about! Spidey versus Spider! What more do you need?",
 	"url": "https://annihilusssl.sslcs.cdngc.net/c/DIG025712_2.jpg?h=81c0fb856ff80c390e73f4b70ea10c56&width=174",
 	"available": true,
 	"genre":"superheroes",

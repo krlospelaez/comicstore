@@ -13,6 +13,7 @@ require.config({
         	exports: 'Handlebars'
         },
         alphanum: {
+        	deps: ['jquery'],
         	exports: 'jquery'
         },
     },
