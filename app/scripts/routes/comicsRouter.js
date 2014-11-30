@@ -36,13 +36,19 @@ define(function (require) {
         routes: {
         	'': 'comic',
         	'comic': 'comic',
+        	'comic/search/:value': 'comic',
+        	'loans/search/:value': 'loans',
         	'comic/detail/:id' : 'comicDetail',
         	'genre/:id': 'genre',
         	'login': 'login',
         	'logout': 'logout',
         	'register': 'register',
         	'characters': 'characters',
+        	'characters/search/:value': 'characters',
         	'character/detail/:id': 'characterDetail',
+        	'editions' : 'editions',
+        	'editions/search/:value' : 'editions',
+        	'news': 'news',
         	'profile': 'profile'
         },
         
@@ -50,7 +56,7 @@ define(function (require) {
         
         },
         
-        comic: function() {
+        comic: function(search) {
         	var HomeView = require('views/home');
         	var ComicListView = require('views/comiclist');
         	var ComicCollection = require('collections/comic');
@@ -59,7 +65,39 @@ define(function (require) {
         	
         	var home = new HomeView();
         	this.render(home);
-        	home.renderSubView(new ComicListView({model: allComics, title: 'Comics'}));
+        	if(search) {
+        		home.renderSubView(new ComicListView({
+        			model: allComics,
+        			title: 'Comics',
+        			search: {
+        				name: search
+        			}
+        		}));
+        	}
+        	else {
+        		home.renderSubView(new ComicListView({model: allComics, title: 'Comics'}));
+        	}
+        },
+        
+        loans: function(search) {
+        	var HomeView = require('views/home');
+        	var ComicListView = require('views/comiclist');
+        	var ComicCollection = require('collections/comic');
+        	
+        	var allComics = new ComicCollection();
+        	
+        	var home = new HomeView();
+        	this.render(home);
+        	if(search) {
+        		home.renderSubView(new ComicListView({
+        			model: allComics,
+        			title: 'Comics',
+        			search: {
+        				name: search,
+        				available: false
+        			}
+        		}));
+        	}
         },
         
         comicDetail: function(comicId) {
@@ -91,7 +129,7 @@ define(function (require) {
     		home.renderSubView(comicList);
         },
         
-        characters: function(characterId) {
+        characters: function(search) {
         	var HomeView = require('views/home');
         	var CharactersView = require('views/characters');
         	var CharacterCollection = require('collections/character');
@@ -101,7 +139,40 @@ define(function (require) {
         	var home = new HomeView();
         	this.render(home);
         	
-        	home.renderSubView(new CharactersView({model: characters}));
+        	if(search) {
+        		home.renderSubView(new CharactersView({
+        			model: characters,
+        			search: {
+        				name: search
+        			}
+        		}));
+        	}
+        	else {
+        		home.renderSubView(new CharactersView({model: characters}));
+        	}
+        },
+        
+        editions: function(search) {
+        	var HomeView = require('views/home');
+        	var EditionsView = require('views/editions');
+        	var EditionCollection = require('collections/edition');
+        	
+        	var editions = new EditionCollection();
+        	
+        	var home = new HomeView();
+        	this.render(home);
+        	
+        	if(search) {
+        		home.renderSubView(new EditionsView({
+        			model: editions,
+        			search: {
+        				name: search
+        			}
+        		}));
+        	}
+        	else {
+        		home.renderSubView(new EditionsView({model: editions}));
+        	}
         },
         
         characterDetail: function(characterId) {
@@ -110,6 +181,19 @@ define(function (require) {
         	
         	var model = new CharacterDetailModel({ characterId: characterId });
         	this.render(new CharacterDetailView({model: model}));
+        },
+        
+        news: function() {
+        	var HomeView = require('views/home');
+        	var NewsView = require('views/news');
+        	var NewsModel = require('models/news');
+        	
+        	var news = new NewsModel();
+        	
+        	var home = new HomeView();
+        	this.render(home);
+        	
+        	home.renderSubView(new NewsView({model: news}));
         },
         
         profile: function() {
@@ -198,9 +282,19 @@ define(function (require) {
 			}
 			else {
 				//No problem, handle the route!!
-				if(_.isEmpty($('#login-menu'))) {
-					var LoginMenuView = require('views/loginMenu');
-					new LoginMenuView();	
+				if(location.hash !== '#' + this.routePrefix + 'login' && location.hash !== '#' + this.routePrefix + 'logout') {
+					if(_.isEmpty($('#login-menu'))) {
+						var LoginMenuView = require('views/loginMenu');
+						new LoginMenuView();
+					}
+					
+					var MainMenuView = require('views/mainmenu');
+					new MainMenuView();
+				}
+				else {
+					$('#main-menu input').off();
+					$('#main-menu button').off();
+					$('#main-menu').html('');
 				}
 				
 				return next();

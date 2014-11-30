@@ -1,0 +1,70 @@
+{
+	"comics": [{
+		"id": 6,
+		"name": "Thor (2007-2011) #11",
+		"url": "https://annihilusssl.sslcs.cdngc.net/c/JUL082345.jpg?h=b76ee448f867839ae18dc0f404458b2e&width=174",
+		"order": 32
+	},{
+		"id": 7,
+		"name": "X-Men (1991-2001) #20",
+		"url": "https://annihilusssl.sslcs.cdngc.net/c/DIG031372_1.jpg?h=c70ebaa329c69a9fc4e9aab371656e64&width=174",
+		"order": 55
+	},{
+		"id": 8,
+		"name": "Guardians of the Galaxy Vol. 3: Guardians Disassembled",
+		"url": "https://annihilusssl.sslcs.cdngc.net/c/DIG031058_1.jpg?h=fd6f363df235cf19ba4b89bfaf0479bb&width=174",
+		"order": 35
+	},{
+		"id": 9,
+		"name": "Miles Morales: Ultimate Spider-Man (2014-) #4",
+		"url": "https://annihilusssl.sslcs.cdngc.net/c/DIG025712_2.jpg?h=81c0fb856ff80c390e73f4b70ea10c56&width=174",
+		"order": 15
+	}],
+	"mostLoans": [{
+		"id": 1,
+		"name": "All-New Captain America (2014-) #1",
+		"url": "https://annihilusssl.sslcs.cdngc.net/c/DIG030905_3.jpg?h=786695942966cc2ce583546b76710ee7&width=174",
+		"order": 10
+	},{
+		"id": 6,
+		"name": "Thor (2007-2011) #11",
+		"url": "https://annihilusssl.sslcs.cdngc.net/c/JUL082345.jpg?h=b76ee448f867839ae18dc0f404458b2e&width=174",
+		"order": 32
+	},{
+		"id": 2,
+		"name": "Hulk (2008-2012) #4",
+		"url": "https://annihilusssl.sslcs.cdngc.net/c/FEB082223.jpg?h=75711ce138a65fd6d9995f861d56d5ec&width=174",
+		"order": 100
+	},{
+		"id": 5,
+		"name": "Superior Iron Man (2014-) #1",
+		"url": "https://annihilusssl.sslcs.cdngc.net/c/DIG030910_3.jpg?h=2ecb61d6ecd0e40ab816b9550438ea35&width=174",
+		"order": 50
+	}],
+	"videos": [{
+		"name": "Avengers: Age of Ultron",
+		"url": "http://i.annihil.us/u/prod/marvel/i/mg/9/d0/544a90d6c4ff8/portrait_incredible.jpg"
+	},{
+		"name": "Marvel's The Avengers",
+		"url": "http://x.annihil.us/u/prod/marvel/i/mg/6/50/521f70b81f7d3/portrait_incredible.jpg"
+	},{
+		"name": "Iron Man 3",
+		"url": "http://x.annihil.us/u/prod/marvel/i/mg/c/a0/521f70fab9fd8/portrait_incredible.jpg"
+	},{
+		"name": "Captain America: The Winter Soldier",
+		"url": "http://x.annihil.us/u/prod/marvel/i/mg/9/50/5342fbd2c94c5/portrait_incredible.jpg"
+	}],
+	"games": [{
+		"name": "Marvel: Avengers Alliance Tactics",
+		"url": "http://x.annihil.us/u/prod/marvel/i/mg/c/c0/5390fd5bad86f/portrait_marvelous.jpg"
+	},{
+		"name": "Marvel Puzzle Quest",
+		"url": "http://x.annihil.us/u/prod/marvel/i/mg/c/c0/5390fd5bad86f/portrait_marvelous.jpg"
+	},{
+		"name": "Marvel: Avengers Alliance Tactics",
+		"url": "http://x.annihil.us/u/prod/marvel/i/mg/c/c0/5390fd5bad86f/portrait_marvelous.jpg"
+	},{
+		"name": "Iron Man 3: The Official Game",
+		"url": "http://i.annihil.us/u/prod/marvel/i/mg/5/70/523a2544b61ab/portrait_marvelous.jpg"
+	}]
+}

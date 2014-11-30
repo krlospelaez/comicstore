@@ -1,0 +1,21 @@
+<div class="well well-title"><h4><strong>Editions</strong></h4></div>
+<div class="row">
+	{{#each editions}}
+		<articule class="col-xs-6 col-md-3">
+			<div class="thumbnail">
+				<a href="#!/comic/detail/{{id}}">
+				<img src="{{url}}" alt="comic image">
+				<div class="caption">
+					<h5>{{name}}</h5>
+				</div>
+				</a>
+			</div>
+		</articule>
+		{{#unless @last}}
+			{{#ifmodeqzero @index 4}}
+</div>
+<div class="row">
+			{{/ifmodeqzero}}
+		{{/unless}}
+	{{/each}}
+</div>

@@ -1,0 +1,79 @@
+<div class="well well-title"><h4><strong>New Comics</strong></h4></div>
+<div class="row">
+	{{#each comics}}
+		<articule class="col-xs-6 col-md-3">
+			<div class="thumbnail">
+				<img src="{{url}}" alt="comic image">
+				<div class="caption">
+					<h5>{{name}}</h5>
+				</div>
+			</div>
+		</articule>
+		{{#unless @last}}
+			{{#ifmodeqzero @index 4}}
+</div>
+<div class="row">
+			{{/ifmodeqzero}}
+		{{/unless}}
+	{{/each}}
+</div>
+
+<div class="well well-title"><h4><strong>Most Loans</strong></h4></div>
+<div class="row">
+	{{#each mostLoans}}
+		<articule class="col-xs-6 col-md-3">
+			<div class="thumbnail">
+				<img src="{{url}}" alt="most loan image">
+				<div class="caption">
+					<h5>{{name}}</h5>
+				</div>
+			</div>
+		</articule>
+		{{#unless @last}}
+			{{#ifmodeqzero @index 4}}
+</div>
+<div class="row">
+			{{/ifmodeqzero}}
+		{{/unless}}
+	{{/each}}
+</div>
+
+<div class="well well-title"><h4><strong>New Videos</strong></h4></div>
+<div class="row">
+	{{#each videos}}
+		<articule class="col-xs-6 col-md-3">
+			<div class="thumbnail">
+				<img src="{{url}}" alt="video image">
+				<div class="caption">
+					<h5>{{name}}</h5>
+				</div>
+			</div>
+		</articule>
+		{{#unless @last}}
+			{{#ifmodeqzero @index 4}}
+</div>
+<div class="row">
+			{{/ifmodeqzero}}
+		{{/unless}}
+	{{/each}}
+</div>
+
+<div class="well well-title"><h4><strong>New Games</strong></h4></div>
+<div class="row">
+	{{#each games}}
+		<articule class="col-xs-6 col-md-3">
+			<div class="thumbnail">
+				<img src="{{url}}" alt="video image">
+				<div class="caption">
+					<h5>{{name}}</h5>
+				</div>
+			</div>
+		</articule>
+		{{#unless @last}}
+			{{#ifmodeqzero @index 4}}
+</div>
+<div class="row">
+			{{/ifmodeqzero}}
+		{{/unless}}
+	{{/each}}
+</div>

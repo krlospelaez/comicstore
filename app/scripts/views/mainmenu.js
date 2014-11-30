@@ -4,66 +4,73 @@ define([
     'underscore',
     'backbone',
     'handlebars',
-    'text!templates/home.hbs',
-    'views/comiclist',
-    'text!templates/genre.hbs',
+    'text!templates/mainmenu.hbs',
     'collections/genre',
-    'text!templates/popular.hbs',
-    'collections/popular'
-], function ($, _, Backbone, Handlebars, sourceTpl,
-			 ComicListView, genreTpl, GenreCollection,
-			 popularTpl, PopularCollection) {
+], function ($, _, Backbone, Handlebars, sourceTpl, GenreCollection) {
 
     'use strict';
 	
     var MainMenuView = Backbone.View.extend({
-        tagName: 'div',
+        tagName: '',
 
         id: '',
 
         className: '',
 
         events: {
-        	'click .available-menu': 'availableMenu'
+        	'click #btn-search': 'search'
         },
         
-        //el: '.general-view',
+        el: '#main-menu',
         
         template: Handlebars.compile(sourceTpl),
-        genreTemplate: Handlebars.compile(genreTpl),
-        popularTemplate: Handlebars.compile(popularTpl),
 
         initialize: function (options) {
         	var me = this;
         	
-        	me.genreModel = new GenreCollection();
-        	me.qualificationModel = new PopularCollection({ url: 'qualification' });
-        	me.topSearchModel = new PopularCollection({ url: 'topsearch' });
-        	me.recommendedModel = new PopularCollection({ url: 'recommended' });
+        	me.model = new GenreCollection();
         	
             
-            me.listenTo(me.genreModel, 'sync', me.renderGenreMenu);
-            me.listenTo(me.qualificationModel, 'sync', me.renderQualification);
-            me.listenTo(me.topSearchModel, 'sync', me.renderTopSearch);
-            me.listenTo(me.recommendedModel, 'sync', me.renderRecommended);
+            me.listenTo(me.model, 'sync', me.render);
             
-            me.render();
-            
-            me.genreModel.fetch();
-            me.qualificationModel.fetch();
-            me.topSearchModel.fetch();
-            me.recommendedModel.fetch();
+            me.model.fetch();
         },
 
         render: function () {
         	var me = this;
-        	this.$el.html(this.template);
+        	me.$el.html(me.template({genre: me.model.toJSON()}));
+        	
+        	$('#txt-search').keydown(function(event) {
+        		if(event.keyCode == 13) {
+					event.preventDefault();
+					me.search();
+					return false;
+				}
+        	});
             
-            return this;
+            return me;
         },
         
-        renderGenreMenu: function() {
-        	$('#main-menu').html(this.genreTemplate({genre: this.genreModel.toJSON()}));
+        search: function() {
+        	var category = $('#sel-category').val();
+        	var search = $('#txt-search').val();
+        	
+        	switch(category) {
+        		case 'comic':
+        			Backbone.history.navigate('#!/comic/search/' + search, { trigger : true });
+        			break;
+        		case 'character':
+        			Backbone.history.navigate('#!/characters/search/' + search, { trigger : true });
+        			break;
+        		case 'loans':
+        			Backbone.history.navigate('#!/loans/search/' + search, { trigger : true });
+        			break;
+        		case 'edition':
+        			Backbone.history.navigate('#!/editions/search/' + search, { trigger : true });
+        			break;
+        		default:
+        			break;
+        	}
         }
     });
 

@@ -35,12 +35,20 @@
 		"releaseDate": "Oct 3, 2013",
 		"image": "http://x.annihil.us/u/prod/marvel/i/mg/c/c0/5390fd5bad86f/portrait_marvelous.jpg"
 	},{
-		"name": "LEGO Marvel Super Heroes",
-		"releaseDate": "Oct 22, 2013",
+		"name": "Marvel War of Heroes",
+		"releaseDate": "Oct 18, 2012",
+		"image": "http://x.annihil.us/u/prod/marvel/i/mg/3/50/5239c06931db5/portrait_marvelous.jpg"
+	},{
+		"name": "Marvel Puzzle Quest",
+		"releaseDate": "Oct 3, 2013",
+		"image": "http://i.annihil.us/u/prod/marvel/i/mg/8/03/52274716ef028/portrait_marvelous.jpg"
+	},{
+		"name": "Iron Man 3: The Official Game",
+		"releaseDate": "Apr 25, 2013",
 		"image": "http://i.annihil.us/u/prod/marvel/i/mg/5/70/523a2544b61ab/portrait_marvelous.jpg"
 	},{
-		"name": "Marvel: Avengers Alliance",
-		"releaseDate": "Mar 1, 2012",
-		"image": "http://x.annihil.us/u/prod/marvel/i/mg/3/d0/52274739ee4b5/portrait_marvelous.jpg"
+		"name": "Marvel Heroes 2015",
+		"releaseDate": "-",
+		"image": "http://i.annihil.us/u/prod/marvel/i/mg/1/10/539b7773e8062/portrait_marvelous.jpg"
 	}]
 }

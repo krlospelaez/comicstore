@@ -1,0 +1,31 @@
+[{
+	"id": 1,
+	"name": "All-New Captain America (2014-)",
+	"url": "https://annihilusssl.sslcs.cdngc.net/c/DIG030905_3.jpg?h=786695942966cc2ce583546b76710ee7&width=174",
+	"order": 10
+},{
+	"id": 2,
+	"name": "Hulk Vol. 1: Red Hulk",
+	"url": "https://annihilusssl.sslcs.cdngc.net/c/DEC082454.jpg?h=25b022c2afba3d4a50a39006363ee998&width=174",
+	"order": 100
+},{
+	"id": 3,
+	"name": "Miles Morales: Ultimate Spider-Man (2014-)",
+	"url": "https://annihilusssl.sslcs.cdngc.net/s/17553.jpg?h=0e2cad20f78f521e5423e401427987b9&width=174",
+	"order": 30
+},{
+	"id": 4,
+	"name": "Avengers (1963-1996)",
+	"url": "https://annihilusssl.sslcs.cdngc.net/s/4231.jpg?h=9990ed8350a5ebe79bb0a10bcef127fc&width=174",
+	"order": 40
+},{
+	"id": 5,
+	"name": "Superior Iron Man (2014-)",
+	"url": "https://annihilusssl.sslcs.cdngc.net/s/28716.jpg?h=c90a81183b6ddfa83543ee7481457860&width=174",
+	"order": 50
+},{
+	"id": 6,
+	"name": "Thor (2007-2011)",
+	"url": "https://annihilusssl.sslcs.cdngc.net/s/1080.jpg?h=d19469cac44549632f122366d5ec88ee&width=174",
+	"order": 32
+}]

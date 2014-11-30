@@ -6,13 +6,10 @@ define([
     'handlebars',
     'text!templates/home.hbs',
     'views/comiclist',
-    'text!templates/genre.hbs',
-    'collections/genre',
     'text!templates/popular.hbs',
     'collections/popular'
 ], function ($, _, Backbone, Handlebars, sourceTpl,
-			 ComicListView, genreTpl, GenreCollection,
-			 popularTpl, PopularCollection) {
+			 ComicListView, popularTpl, PopularCollection) {
 
     'use strict';
 	
@@ -30,26 +27,22 @@ define([
         //el: '.general-view',
         
         template: Handlebars.compile(sourceTpl),
-        genreTemplate: Handlebars.compile(genreTpl),
         popularTemplate: Handlebars.compile(popularTpl),
 
         initialize: function (options) {
         	var me = this;
         	
-        	me.genreModel = new GenreCollection();
         	me.qualificationModel = new PopularCollection({ url: 'qualification' });
         	me.topSearchModel = new PopularCollection({ url: 'topsearch' });
         	me.recommendedModel = new PopularCollection({ url: 'recommended' });
         	
             
-            me.listenTo(me.genreModel, 'sync', me.renderGenreMenu);
             me.listenTo(me.qualificationModel, 'sync', me.renderQualification);
             me.listenTo(me.topSearchModel, 'sync', me.renderTopSearch);
             me.listenTo(me.recommendedModel, 'sync', me.renderRecommended);
             
             me.render();
             
-            me.genreModel.fetch();
             me.qualificationModel.fetch();
             me.topSearchModel.fetch();
             me.recommendedModel.fetch();
@@ -72,10 +65,6 @@ define([
         	
         	$('#home-view').html(view.render().el);
         	this.currentSubView = view;
-        },
-        
-        renderGenreMenu: function() {
-        	$('#genre-menu').append(this.genreTemplate({genre: this.genreModel.toJSON()}));
         },
         
         renderQualification: function() {

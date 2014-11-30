@@ -5,11 +5,11 @@ define([
     'underscore',
     'backbone',
     'handlebars',
-    'text!templates/characters.hbs'
+    'text!templates/editions.hbs'
 ], function ($, _, Backbone, Handlebars, sourceTpl) {
     'use strict';
 
-    var CharactersView = Backbone.View.extend({
+    var EditionsView = Backbone.View.extend({
 
         tagName: 'div',
 
@@ -48,15 +48,15 @@ define([
         
         renderData: function() {
         	var me = this;
-        	me.$el.html(this.template({characters: me.model.toJSON()}));
+        	me.$el.html(this.template({editions: me.model.toJSON()}));
         	
         	if(me.search) {
         		$('#txt-search').val(me.search.name);
-				$('#sel-category').val('character');
+				$('#sel-category').val('edition');
 				$('#available-menu').addClass('hide');
         	}
         }
     });
 
-    return CharactersView;
+    return EditionsView;
 });
